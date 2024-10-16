@@ -18,7 +18,7 @@ const PatientList = ({ title, patientDetilas, loading }) => {
   }, [searchTerm, patientDetilas]);
 
   return (
-    <div className="p-4 bg-white rounded-md overflow-y-scroll no-scrollbar shadow-md w-full h-full">
+    <div className="p-4 bg-white rounded-md overflow-y-scroll overflow-x-auto no-scrollbar shadow-md w-full h-full">
       <h2 className="text-center text-lg font-bold text-green-600">{title}</h2>
 
       {/* Search Input */}

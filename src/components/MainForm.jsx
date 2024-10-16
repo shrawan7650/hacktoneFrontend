@@ -26,16 +26,18 @@ const MainForm = ({ onSave, fetchParentsDetials }) => {
 
   // Form submission logic
   const handleSubmit = async () => {
+
     setLaoding(true);
     try {
       const response = await axios.post(
         "http://localhost:5000/api/patient-data",
         patientData
       );
-      console.log("Form submitted successfully:", response.data);
+      // console.log("Form submitted successfully:", response.data);
       onSave(response.data.compare);
       fetchParentsDetials();
       setLaoding(false);
+      window.location.reload();
     } catch (error) {
       setLaoding(false);
       console.error("Error submitting data:", error);

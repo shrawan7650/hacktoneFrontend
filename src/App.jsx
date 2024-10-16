@@ -84,18 +84,23 @@ const App = () => {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                   <Header />
-                  <motion.div
+                
+                 <motion.div
+                
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
                   >
-                    <MainContent
+               <div className="min-h-[80%] ">
+               <MainContent
                       onSave={onSave}
                       fetchParentsDetails={fetchParentsDetails}
                       verificationStatus={verificationStatus}
                       patientDetails={patientDetails}
                     />
+               </div>
                   </motion.div>
+                
                   <Footer />
                 </motion.div>
               }

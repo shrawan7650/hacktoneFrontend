@@ -7,21 +7,23 @@ const InputForm = ({ onSave, title }) => {
   const [bloodPressure, setBloodPressure] = useState("");
   const [oxygenRate, setOxygenRate] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const healthData = { heartbeatRate, bloodPressure, oxygenRate };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const healthData = { heartbeatRate, bloodPressure, oxygenRate };
 
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/api/patient-data",
-        healthData
-      );
-      console.log("response1", response);
-      onSave(healthData);
-    } catch (error) {
-      console.error("Error submitting data:", error);
-    }
-  };
+  //   try {
+  //     // const response = await axios.post(
+  //     //   "http://localhost:5000/api/patient-data",
+  //     //   healthData
+  //     // );
+  //     // console.log("response1", response);
+  //     // onSave(healthData);
+  //     //window reload
+  //     window.location.reload();
+  //   } catch (error) {
+  //     console.error("Error submitting data:", error);
+  //   }
+  // };
 
   return (
     <motion.div
@@ -31,7 +33,7 @@ const InputForm = ({ onSave, title }) => {
       className="p-4 bg-white rounded-md shadow-md w-1/3"
     >
       <h2 className="text-center text-lg font-bold text-green-600">{title}</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Heart Rate
